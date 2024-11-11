@@ -1,0 +1,13 @@
+body
+{
+	font-family: "Times New Roman", Times, serif;
+}
+
+.banner
+{
+	width:100%;
+	height:95vh;
+	background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9)),url(../img/banner.jpg);
+	background-size:cover;
+	color:white;
+}
