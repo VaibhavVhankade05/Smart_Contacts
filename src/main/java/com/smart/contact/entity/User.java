@@ -12,6 +12,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class User 
@@ -20,6 +22,8 @@ public class User
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	
+	@NotBlank(message = "Reqiured")
+	@Size(min = 2, max = 50,message = "Extend size")
 	private String name;
 	
 	@Column(unique = true)
@@ -139,5 +143,15 @@ public class User
 	public void setContacts(List<Contacts> contacts) {
 		this.contacts = contacts;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
+				+ ", about=" + about + ", imageUrl=" + imageUrl + ", enabled=" + enabled + ", contacts=" + contacts
+				+ "]";
+	}
+	
 	
 }

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+
+</head>
+<body>
+
+	<section>
+		<div class="container mt-3 text-light w-50 justify-content-center align-items-center">
+			<div class="bg-dark px-5 py-3 rounded-3">
+				<h2 class="fw-bold">
+					<span class="text-danger">L</span>ogin <span class="text-danger">T</span>o
+					<span class="text-danger">S</span>mart <span class="text-danger">C</span>ontacts
+				</h2>
+
+				<form th:action="@{/login}" method="post">
+					<div class="mb-2">
+						<label for="email" class="form-label"> <span
+							class="text-danger">E</span>mail <span class="text-danger">A</span>ddress
+						</label> <input type="email" class="form-control" id="email" name="email"
+							placeholder="Enter your email" required>
+					</div>
+
+					<div class="mb-2">
+						<label for="password" class="form-label"> <span
+							class="text-danger">P</span>assword
+						</label> <input type="password" class="form-control" id="password"
+							name="password" placeholder="Enter your password" required>
+					</div>
+
+					<div class="text-center">
+						<button type="submit" class="btn btn-danger">Login</button>
+					</div>
+
+					<p class="text-center mt-2">
+						Don't have an account? <a th:href="@{/register}" href="#"
+							class="text-danger">Register here</a>
+					</p>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+</html>
